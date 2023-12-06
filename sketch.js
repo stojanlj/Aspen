@@ -235,6 +235,11 @@ function draw() {
     }
     
     base = map(vol*y*sin(0.02*x*frameCount + i), -0.1, 0.1, -100, 100);
+    if(base > 100) {
+      base = 100;
+    } else if (base < -100) {
+      base = -100;
+    }
     if (i == 4) {
       base = -base;
     } else if (!song.isPlaying() && micOn == false){
